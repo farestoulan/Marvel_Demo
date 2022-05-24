@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RemotDataSource {
 
     private static final String BASE_URL = "https://gateway.marvel.com/";
-    private MutableLiveData<DataModelClass> volumesResponseLiveData;
+    private  MutableLiveData<DataModelClass> volumesResponseLiveData;
 
 
     public Call<DataModelClass> remotData(Callback<DataModelClass> callback) {

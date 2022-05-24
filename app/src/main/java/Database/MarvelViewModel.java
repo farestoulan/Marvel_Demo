@@ -8,6 +8,7 @@ import ModelClasses.DataModelClass;
 public class MarvelViewModel extends ViewModel {
 
     private final Repository repository;
+    private final MutableLiveData<DataModelClass> resultsLD = new MutableLiveData<>();
 
     public MarvelViewModel(Repository repository) {
         this.repository = repository;

@@ -24,28 +24,32 @@ public class Repository {
         MutableLiveData<DataModelClass> res = new MutableLiveData<>();
         if (localData.getLocalData() != null) {
             res.postValue(localData.getLocalData());
-        } else {
-            remoteData.remotData(new Callback<DataModelClass>() {
-                @Override
-                public void onResponse(Call<DataModelClass> call, Response<DataModelClass> response) {
-                   Log.i("results_fares****", response.body().data.results.get(2).getDescription());
-                    Log.i("results_fares****", response.body().data.results.get(2).getThumbnail().getPath());
-                    if (response.body() != null) {
-                     //   localData.insertLocalData(response.body());
-                        res.postValue(response.body());
+        }
+
+        else {
+                remoteData.remotData(new Callback<DataModelClass>() {
+                    @Override
+                    public void onResponse(Call<DataModelClass> call, Response<DataModelClass> response) {
+                        Log.i("results_fares****", response.body().data.results.get(2).getThumbnail().getPath());
+                        if (response.body() != null) {
+                            localData.insertLocalData(response.body());
+                            res.postValue(response.body());
+                        }
                     }
-                }
 
-                @Override
-                public void onFailure(Call<DataModelClass> call, Throwable t) {
-                    Log.i("results_error****", t.getMessage());
-                    res.postValue(null);
+                    @Override
+                    public void onFailure(Call<DataModelClass> call, Throwable t) {
+                        Log.i("results_error****", t.getMessage());
+                        res.postValue(null);
+                    }
+                });
+
+            }
 
 
-                }
-            });
 
-     }
+
+
         return res;
 
 
