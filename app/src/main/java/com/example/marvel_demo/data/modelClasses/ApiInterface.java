@@ -1,4 +1,4 @@
-package ModelClasses;
+package com.example.marvel_demo.data.modelClasses;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

@@ -1,20 +1,11 @@
-package com.example.marvel_demo;
+package com.example.marvel_demo.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
 
-import Adapter.Adapter;
-import Database.LocalDataSource;
-import Database.MarvelViewModel;
-import Database.MyViewModelFactory;
-import Database.RemotDataSource;
-import Database.Repository;
+import com.example.marvel_demo.R;
 
 public class MainActivity extends AppCompatActivity  {
 

@@ -1,9 +1,9 @@
-package Database;
+package com.example.marvel_demo.data.dataSource;
 
 import androidx.lifecycle.MutableLiveData;
 
-import ModelClasses.ApiInterface;
-import ModelClasses.DataModelClass;
+import com.example.marvel_demo.data.modelClasses.ApiInterface;
+import com.example.marvel_demo.data.modelClasses.DataModelClass;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;

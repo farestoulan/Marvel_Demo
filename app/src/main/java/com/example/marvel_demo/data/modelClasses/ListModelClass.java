@@ -1,4 +1,4 @@
-package ModelClasses;
+package com.example.marvel_demo.data.modelClasses;
 
 import com.google.gson.annotations.SerializedName;
 

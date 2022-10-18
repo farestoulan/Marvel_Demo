@@ -1,11 +1,10 @@
-package com.example.marvel_demo;
+package com.example.marvel_demo.presentation.fragments;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -15,20 +14,20 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsSpinner;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.util.List;
 
-import Adapter.Adapter;
-import Database.LocalDataSource;
-import Database.MarvelViewModel;
-import Database.MyViewModelFactory;
-import Database.RemotDataSource;
-import Database.Repository;
-import Database.SharedViewModel;
-import ModelClasses.ListModelClass;
+import com.example.marvel_demo.presentation.adapter.Adapter;
+
+import com.example.marvel_demo.R;
+import com.example.marvel_demo.data.dataSource.LocalDataSource;
+import com.example.marvel_demo.presentation.viewModel.MarvelViewModel;
+import com.example.marvel_demo.presentation.viewModel.MyViewModelFactory;
+import com.example.marvel_demo.data.dataSource.RemotDataSource;
+import com.example.marvel_demo.data.repository.Repository;
+
+import com.example.marvel_demo.data.modelClasses.ListModelClass;
 
 
 public class MainFragment extends Fragment implements Adapter.ItemClickListener {
@@ -95,12 +94,9 @@ public class MainFragment extends Fragment implements Adapter.ItemClickListener 
             recyclerView.setAdapter(adapter);
             adapter.setClickListener(this);
 
-
         });
 
-
     }
-
 
     @Override
     public void onItemClick(View view, int position) {

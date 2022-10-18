@@ -1,26 +1,21 @@
-package Adapter;
+package com.example.marvel_demo.presentation.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.marvel_demo.MainFragment;
 import com.example.marvel_demo.R;
 
 import java.util.List;
 
-import ModelClasses.ListModelClass;
+import com.example.marvel_demo.data.modelClasses.ListModelClass;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
@@ -48,24 +43,24 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-       // holder.description.setText(data.get(position).getDescription());
-
         Glide.with(mContext)
-                .load(data.get(position).getThumbnail().getPath() + "." + data.get(position).getThumbnail().getExtension())
+                .load(data.get(position).getThumbnail().getPath() + "." +
+                        data.get(position).getThumbnail().getExtension())
                 .into(holder.path);
 
 
-       // Log.i("onBindViewHolder", data.get(position).getDescription());
     }
 
     public interface ItemClickListener {
         void onItemClick(View view, int position);
     }
+
     @Override
     public int getItemCount() {
         return data.size();
     }
-    public   void setClickListener(ItemClickListener itemClickListener) {
+
+    public void setClickListener(ItemClickListener itemClickListener) {
         this.mClickListener = itemClickListener;
     }
 
@@ -75,7 +70,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         TextView description;
 
 
-        public  MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             path = itemView.findViewById(R.id.imageView);
@@ -83,23 +78,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
             itemView.setOnClickListener(this);
 
 
-
         }
 
         @Override
         public void onClick(View view) {
 
-
-           // navController.navigate(R.id.action_mainFragment_to_descriptionFragment);
-            if (mClickListener != null) mClickListener.onItemClick(view, getAbsoluteAdapterPosition());
+            if (mClickListener != null)
+                mClickListener.onItemClick(view, getAbsoluteAdapterPosition());
 
         }
 
-
-
-
-
-
-
     }
+
+
 }

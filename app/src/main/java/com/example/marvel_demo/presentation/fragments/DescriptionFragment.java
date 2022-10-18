@@ -1,24 +1,21 @@
-package com.example.marvel_demo;
+package com.example.marvel_demo.presentation.fragments;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import Adapter.Adapter;
+import com.example.marvel_demo.R;
 
 
-public class ItemListFragment extends Fragment  {
+public class DescriptionFragment extends Fragment {
+
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -27,14 +24,14 @@ public class ItemListFragment extends Fragment  {
     private String mParam1;
     private String mParam2;
 
-    public ItemListFragment() {
+    public DescriptionFragment() {
         // Required empty public constructor
     }
 
 
 
-    public static ItemListFragment newInstance(String param1, String param2) {
-        ItemListFragment fragment = new ItemListFragment();
+    public static DescriptionFragment newInstance(String param1, String param2) {
+        DescriptionFragment fragment = new DescriptionFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -51,14 +48,26 @@ public class ItemListFragment extends Fragment  {
         }
     }
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_item_list, container, false);
+        return inflater.inflate(R.layout.fragment_description, container, false);
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        @NonNull DescriptionFragmentArgs args;
 
+        TextView textView = view.findViewById(R.id.tv_Description);
+
+        if (getArguments()!=null){
+            args = DescriptionFragmentArgs.fromBundle(getArguments());
+            textView.setText(args.getName());
+
+
+        }
+
+    }
 }

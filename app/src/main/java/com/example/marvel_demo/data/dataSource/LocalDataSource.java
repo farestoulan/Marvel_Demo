@@ -1,8 +1,11 @@
-package Database;
+package com.example.marvel_demo.data.dataSource;
 
 import android.content.Context;
 
-import ModelClasses.DataModelClass;
+import com.example.marvel_demo.data.modelClasses.DataModelClass;
+
+import com.example.marvel_demo.data.database.DAOClass;
+import com.example.marvel_demo.data.database.DatabaseClass;
 
 public class LocalDataSource {
 

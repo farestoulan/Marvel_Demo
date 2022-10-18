@@ -1,4 +1,4 @@
-package Database;
+package com.example.marvel_demo.data.database;
 
 import android.content.Context;
 
@@ -7,7 +7,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
-import ModelClasses.DataModelClass;
+import com.example.marvel_demo.data.modelClasses.DataModelClass;
 
 @Database(entities = {DataModelClass.class} ,version = 1)
 @TypeConverters({Converter.class})

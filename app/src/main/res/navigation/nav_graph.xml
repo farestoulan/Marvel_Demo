@@ -6,7 +6,7 @@
     app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/descriptionFragment"
-        android:name="com.example.marvel_demo.DescriptionFragment"
+        android:name="com.example.marvel_demo.presentation.fragments.DescriptionFragment"
         android:label="fragment_description"
         tools:layout="@layout/fragment_description" >
         <argument
@@ -17,14 +17,14 @@
     </fragment>
     <fragment
         android:id="@+id/itemListFragment"
-        android:name="com.example.marvel_demo.ItemListFragment"
+        android:name="com.example.marvel_demo.presentation.fragments.ItemListFragment"
         android:label="fragment_item_list"
         tools:layout="@layout/fragment_item_list" >
 
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.marvel_demo.MainFragment"
+        android:name="com.example.marvel_demo.presentation.fragments.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
 

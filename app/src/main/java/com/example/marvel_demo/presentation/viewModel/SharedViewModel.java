@@ -1,4 +1,4 @@
-package Database;
+package com.example.marvel_demo.presentation.viewModel;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;

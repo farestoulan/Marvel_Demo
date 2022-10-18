@@ -1,13 +1,8 @@
-package ModelClasses;
+package com.example.marvel_demo.data.modelClasses;
 
-import androidx.annotation.NonNull;
 import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
-import com.google.gson.annotations.SerializedName;
-
-import java.util.List;
 
 @Entity(tableName = "Marvel")
 public class DataModelClass {

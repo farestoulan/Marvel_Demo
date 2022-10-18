@@ -1,9 +1,11 @@
-package Database;
+package com.example.marvel_demo.presentation.viewModel;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import ModelClasses.DataModelClass;
+import com.example.marvel_demo.data.modelClasses.DataModelClass;
+
+import com.example.marvel_demo.data.repository.Repository;
 
 public class MarvelViewModel extends ViewModel {
 
